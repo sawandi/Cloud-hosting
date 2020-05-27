@@ -1,0 +1,21 @@
+{
+  "name": "afgroupproject",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npm run server-start",
+    "server-install": "cd stack-api && npm install",
+    "client-install": "cd stack-client && npm install",
+    "server-start": "cd stack-api && node index.js",
+    "client-start": "cd stack-client && npm start",
+    "dev-run": "concurrently \"npm run server-start\" \"npm run client-start\"",
+    "dev-install": "concurrently \"npm run server-install\" \"npm run client-install\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix stack-client && npm run build --prefix stack-client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
